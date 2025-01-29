@@ -1,0 +1,98 @@
+QUESTIONS:
+
+QUESTION 1
+LISP:
+Q 2.2-
+
+(A B (C) NO
+((A) (B)) YES
+A B) (C D) NO
+(A (B (C)) NO
+(A (B (C))) YES
+(((A) (B)) (C)) YES
+
+Q 2.4-
+
+((BOW ARROWS) (FLOWERS CHOCOLATES))
+
+Q 2.6-
+
+() -> Nil
+(()) -> (Nil)
+((())) -> ((Nil))
+(() ()) -> (Nil Nil)
+(() (())) -> (Nil (Nil))
+
+Q 2.13-
+
+STEP      RESULT
+START      (((FUN)) (IN THE) (SUN))
+C...AR     (((FUN)))
+C...AAR    ((FUN))
+C...AAAR   (FUN)
+CAAAAR     FUN
+
+STEP      RESULT
+START      (((FUN)) (IN THE) (SUN))
+C...DR     ((IN THE) (SUN))
+C...ADR    ((IN THE))
+C...AADR   (IN THE)
+C...AAADR  (IN)
+CAAAADR    IN
+
+STEP      RESULT
+START      (((FUN)) (IN THE) (SUN))
+C...DR     ((IN THE) (SUN))
+C...ADR    ((IN THE))
+C...AADR   (IN THE)
+C...DAADR  (THE)
+CADAADR    THE
+
+STEP      RESULT
+START      (((FUN)) (IN THE) (SUN))
+C...DR     ((IN THE) (SUN))
+C...DDR    ((SUN))
+C...ADDR   (SUN)
+CAADDR     SUN
+
+Q 2.15
+((A B) (C D) (E F))
+
+FUNCTION      RESULT
+Car            ((A B))
+CDDR           ((E F))
+CADR           ((C D))
+CDAR           Nil
+CDAAR          (B)
+CDDAR          error!
+CAAAAR         A
+CDADDR         (F)
+CADADDR        F
+
+Q 2.16
+
+(FRED Nil)
+CAAR -> FRED
+
+QUESTION 2
+
+Q6 Answer- Unix is mostly written in C. 
+Q7 Answer- Too many features in a language, especially in a language that not many programmers are familiar with, can lead to the neglect of most features in a familiar language and never using an unfamiliar language, even if it has useful features. 
+Q8 Answer- The Readability of a program can be harmed by user-defined operator overloading if they do it non-sensibly. 
+Q9 Answer- one example of a lack of orthogonality in C are its rules and exceptions when it comes to its data types, arrays and records. 
+Q10 Answer- ALGOL 68 
+Q11 Answer- Special words 
+Q12 Answer- a program is reliable if it performs to its specifications under all conditions. 
+Q13 Answer- Type checking the parameters of a subprogram is important because without it the type of parameter in a function call won't be checked to determine whether its type matched that of the corresponding formal parameter in the function. 
+Q14 Answer- Aliasing is having two or more distinct names in a program that can be used to access the same memory cell. 
+Q15 Answer- exception handling is the ability of a program to interpret run-time errors (as well as other unusual conditions detectable by the program), take corrective measures, and then continue. 
+Q16 Answer- both readability and writability influence reliability. Readability affects reliability in both the writing and maintenance phases. 
+
+Q20 Answer- incompleteness of type checking and inadequacy of control statements. 
+Q21 Answer- Inheritance, data abstraction, and Dynamic (run-time) method binding  
+Q22 Answer- Smalltalk was a foundational part of object-oriented programming, fully embracing and implementing OOP principles. Simula was the first to introduce the fundamental concepts of OOP. 
+Q23 Answer- reliability and cost of execution 
+Q24 Answer- compiler implementation, pure interpretation, and Hybrid implementation systems 
+Q25 Answer- compiler 
+
+Q29 Answer- pure interpretation has the advantage of allowing easy implementation of many source-level debugging operations
