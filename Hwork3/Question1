@@ -1,0 +1,68 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+//Function to partition the array
+int partition(int arr[], int low, int high)
+{
+	int pivot = arr[high];
+	int i = low - 1;
+	for (int j = low; j < high; j++)
+	{
+		if (arr[j] <= pivot)
+		{
+			i++;
+			swap(arr[i], arr[j]);
+		}
+	}
+	swap(arr[i + 1], arr[high]);
+	return i + 1;
+}
+
+//Funtion to implement quicksort without recursion
+void quicksort_iterative(int arr[], int low, int high)
+{
+	//Create a stack for recursion
+	stack<pair<int, int>> s;
+
+	//Push the initial range onto the stack
+	s.push({ low, high });
+
+	//Loop while there are subarrays to sort
+	while (!s.empty())
+	{
+		//Pop the top subarray range
+		auto& p = s.top();
+		int low = p.first;
+		int high = p.second;
+		s.pop();
+
+		if (low < high)
+		{
+			//Partition the array and get the pivot index
+			int pi = partition(arr, low, high);
+
+			//Push the subarrays onto the stack
+			s.push({ low, pi - 1 });
+			s.push({ pi + 1, high });
+		}
+	}
+
+}
+
+
+int main()
+{
+	int arr[] = { 20, 17, 18, 19, 10, 15 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	quicksort_iterative(arr, 0, n - 1);
+
+	cout << "Sorted array: ";
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	return 0;
+}

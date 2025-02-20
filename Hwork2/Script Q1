@@ -1,0 +1,79 @@
+From Lisp Text:
+Q 3.1- NIL
+Q 3.2 - (/ (+ 8 12) 2)
+Q 3.3 - (+ (* 3 3) (* 4 4))
+
+Q 3.7- (defun MILES-PER-GALLON (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+(* (- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUMED))
+
+Test for functionality 
+(MILES-PER-GALLON 0 10 12)
+Should output 120
+
+Q 3.10-
+(third (the quick bown fox))
+Error- There is a mixing quote
+Correction- (third ‘(the quick bown fox))
+
+(list 2 and 2 is 4)
+Error- there are multiple missing quotes
+Correction- (list ‘2 ‘and ‘2 ‘is ‘4)
+
+(+ 1 ‘(length (list t t t t)))
+Error- unnecessary quote
+Correction- (+ 1 (length (list t t t t)))
+
+
+(cons ‘patrick (seymour marvin))
+Error- missing quote
+Correction- (cons 'patrick '(seymour marvin))
+
+(cons ‘patrick (list seymour marvin))
+Error-missing multiple quotes
+Correction- (cons ‘patrick (list ‘seymour ‘marvin))
+
+Q 3.20- 
+(MYSTERY '(dancing bear))
+ Result- (BEAR DANCING)
+
+(MYSTERY ‘dancing ‘bear)
+Error- too many arguments
+
+(MYSTERY ‘(zowie))
+Result- (NIL ZOWIE)
+
+(MYSTERY (list ‘first ‘second))
+Result- (SECOND FIRST)
+
+Q 3.21
+(defun speak (x y) (list ‘all ‘x ‘is ‘y))
+Error- both x and y are quoted in the function’s body
+
+(defun speak (x) (y) (list ‘all x ‘is y))
+Error - (x) and (y) are supposed to be (x y)
+
+(defun speak ((x) (y)) (list all ‘x is ‘y))
+Error- ((x) (y)) should be (x y). (all and is should be ‘all and ‘is) (x and y are quoted inside body of function)
+
+Q 3.25
+
+(list ’cons t nil)
+Result- (CONS T NIL)
+
+(eval (list ’cons t nil))
+Result- (T)
+
+(eval (eval (list ’cons t nil)))
+Error!
+
+(apply #’cons ’(t nil))
+(T)
+
+(eval nil)
+NIL
+
+(list ’eval nil)
+(EVAL NIL)
+
+(eval (list ’eval nil))
+NIL
