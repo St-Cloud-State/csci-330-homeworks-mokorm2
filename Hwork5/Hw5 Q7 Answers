@@ -1,0 +1,17 @@
+CORRECT STRINGS
+(Sfn '(i x s))
+(Sfn '(i w d s))
+(Sfn '(i x o z s))
+(Sfn '(i x d s s b))
+(Sfn '(i x o y o w s))
+(Sfn '(i y d s s s s b))
+(Sfn '(i x o w o y d s s b))
+
+INCORRECT STRINGS
+(Sfn '(i s x))
+(Sfn '(i d s w))
+(Sfn '(i s x o z))
+(Sfn '(i x s s d b))
+(Sfn '(i s x o y o w))
+(Sfn '(d s s s s b i y))
+(Sfn '(i o y d s s b x o w))
